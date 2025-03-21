@@ -1,5 +1,3 @@
 discord
 pillow
 requests
-io
-typing
