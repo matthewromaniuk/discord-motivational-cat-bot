@@ -9,7 +9,7 @@ import requests
 from io import BytesIO
 
 load_dotenv()
-TOKEN: Final[str] = os.getenv('DISCORD_TOKEN')
+TOKEN = os.getenv('DISCORD_TOKEN')
 
 intents = discord.Intents.all()
 
