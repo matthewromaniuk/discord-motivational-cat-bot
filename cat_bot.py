@@ -26,6 +26,19 @@ async def unleash(ctx):
     print('Starting...')
     sendpic.start(ctx)
 
+@bot.command()
+async def nextimg(ctx):
+    url = f.readline().strip()
+    response = requests.get(url, headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36' })
+    if response.status_code == 200:
+        img = Image.open(BytesIO(response.content))
+        buffer = BytesIO()
+        
+        img.save(buffer, format="PNG")
+        buffer.seek(0)
+        file = discord.File(buffer, filename="image.png")
+        await ctx.send(file=file)
+
 @tasks.loop(hours=24)
 async def sendpic(ctx):
     url = f.readline().strip()
