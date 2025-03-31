@@ -39,7 +39,7 @@ async def nextimg(ctx):
         file = discord.File(buffer, filename="image.png")
         await ctx.send(file=file)
 
-@tasks.loop(seconds=10.0)
+@tasks.loop(hours=24)
 async def sendpic(ctx):
     url = f.readline().strip()
     response = requests.get(url, headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36' })
