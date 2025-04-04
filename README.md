@@ -1,5 +1,4 @@
 
-
 #### Dependancies
 - discord.py
 - pillow
