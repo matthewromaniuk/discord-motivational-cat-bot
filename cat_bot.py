@@ -35,7 +35,7 @@ async def unleash(ctx):
 async def nextimg(ctx):
     await send_img(ctx)
 
-@tasks.loop(seconds=5)
+@tasks.loop(hours=24)
 async def send_img(ctx):
     global index
     global urls
